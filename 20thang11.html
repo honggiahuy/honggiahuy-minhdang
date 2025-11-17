@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Vietnamese Teachers' Day</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+  <link rel="icon" href="logo.png">
+  <style>
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    .card {
+      height: 400px;
+      width: 570px;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      cursor: pointer;
+      transition: 2s;
+      -webkit-perspective: 1200px;
+      perspective: 1200px;
+
+    }
+
+    .card:hover {
+      transform: rotate(-5deg);
+    }
+
+    .card:hover .outside {
+      transform: rotateY(-130deg);
+    }
+
+    .outside {
+      height: 100%;
+      width: 50%;
+      position: absolute;
+      left: 50.1%;
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      transition: 2s;
+      transform-origin: left;
+    }
+
+    .front,
+    .back {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      transform: rotateX(0deg);
+    }
+
+    .front {
+      background-color: #BE0F04;
+      z-index: 1;
+      display: flex;
+    }
+
+
+    .back {
+      background: linear-gradient(to right,
+          #BE0F04 50%,
+          #7d0b03);
+      transform: rotateY(180deg);
+      font-family: 'Parisienne', cursive;
+      color: white;
+      font-size: 30px;
+      text-align: center;
+      line-height: 100px;
+
+      box-shadow: 25px 25px 35px rgba(0, 0, 0, 0.3);
+
+    }
+
+    .inside {
+      height: 100%;
+      width: 50%;
+      position: absolute;
+      left: 50%;
+      background: linear-gradient(to left,
+          #BE0F04 50%,
+          #7d0b03);
+      font-family: 'Parisienne', cursive;
+      color: white;
+      font-size: 60px;
+      text-align: center;
+      line-height: 100px;
+      padding: 90px 10px;
+      box-shadow: 25px 25px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .inside>p {
+      border-bottom: 10px dotted white;
+    }
+
+    .back>p {
+      border-bottom: 10px dotted white;
+    }
+
+    .outlinetrong {
+      background: linear-gradient(to right,
+          #BE0F04 50%,
+          #7d0b03);
+      font-family: 'Parisienne', cursive;
+      color: white;
+      font-size: 35px;
+      text-align: center;
+      line-height: 100px;
+
+      box-shadow: 25px 25px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .outlinetrong>p {
+      border-bottom: 10px dotted white;
+    }
+
+    .imgthiep {
+      width: 100px;
+    }
+
+    .textthiep {
+      font-size: 20px;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: sans-serif;
+    }
+
+    .baoquanh {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #004966;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: keo1 1s forwards;
+      z-index: 2000;
+    }
+
+    .khoi1 {
+      background-color: #ff7714;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: keo 1.4s forwards;
+    }
+
+    .khoi1 img {
+      width: 45vw;
+      max-width: 700px;
+    }
+
+    @keyframes keo {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(100%);
+      }
+    }
+
+    @keyframes keo1 {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(100%);
+      }
+    }
+
+    .left-block,
+    .right-block {
+      position: absolute;
+      top: 0;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .left-block {
+      left: -200vw;
+      width: 100vw;
+      background-image: url("bentrai.png");
+      clip-path: polygon(0 0, 100% 0, 75% 50%, 100% 100%, 0 100%);
+      z-index: 3;
+    }
+
+    .right-block {
+      right: -200vw;
+      width: 98.755vw;
+      background-image: url("benphai.png");
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 25% 50%);
+      z-index: 2;
+    }
+
+    .left-block.run {
+      animation: slideLeft 1s forwards;
+    }
+
+    .right-block.run {
+      animation: slideRight 1s forwards;
+    }
+
+    @keyframes slideLeft {
+      from {
+        left: -65vw;
+      }
+
+      to {
+        left: 0;
+      }
+    }
+
+    @keyframes slideRight {
+      from {
+        right: -65vw;
+      }
+
+      to {
+        right: 0;
+      }
+    }
+
+    .text-gradient {
+      font-family: 'Montserrat';
+      font-size: 8vw;
+      font-weight: 900;
+      background-color: transparent;
+      -webkit-background-clip: text;
+      text-shadow: 5px 10px 20px black;
+      color: transparent;
+      color: white;
+      opacity: 0;
+      transform: scale(0.6);
+      animation: showText 1s forwards;
+      animation-delay: 2.3s;
+      position: relative;
+      z-index: 10;
+      text-align: center;
+    }
+
+    @keyframes showText {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .container {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background: #f2f6f7;
+      position: relative;
+    }
+
+
+    .noidung {
+      background-color: #111;
+      min-height: 100vh;
+      position: relative;
+      z-index: 10 !important;
+    }
+
+    .bubble-container {
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      padding: 70px 0;
+      background-image: url("background2.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      overflow: hidden;
+      cursor: pointer;
+      border: 4px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 0 25px rgba(8, 8, 8, 0.788),
+        0 0 60px rgba(255, 255, 255, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .bubble img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .bubble:hover {
+      transform: scale(1.12);
+    }
+
+    @keyframes float1 {
+
+      0%,
+      100% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+
+      25% {
+        transform: translate(25px, 20px) rotate(4deg);
+      }
+
+      50% {
+        transform: translate(-20px, 35px) rotate(-3deg);
+      }
+
+      75% {
+        transform: translate(30px, 10px) rotate(2deg);
+      }
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 25px;
+      width: 90%;
+      max-width: 450px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    .modal-header {
+      height: 180px;
+      background: url("background2.jpg") center / cover;
+      border-radius: 25px 25px 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-avatar {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 5px solid white;
+      object-fit: cover;
+    }
+
+    .modal-body {
+      padding: 70px 20px 20px;
+    }
+
+    .modal-name {
+      font-size: 26px;
+      font-weight: bold;
+      font-family: 'Montserrat';
+    }
+
+    .modal-position {
+      font-size: 18px;
+      margin: 10px 0;
+      font-family: 'Montserrat';
+      color: #e45;
+    }
+
+    .modal-description {
+      font-size: 18px;
+      line-height: 1.6;
+      font-family: 'Montserrat';
+      color: #555;
+    }
+
+    .taskbar {
+      width: 100vw;
+      height: 7vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      z-index: 20;
+    }
+
+    .logotaskbar {
+      height: 60%;
+      margin-left: 20px;
+    }
+
+    .more {
+      height: 40%;
+      margin-right: 30px;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+
+    .more:hover {
+      transform: scale(1.1);
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: -350px;
+      width: 300px;
+      height: 100vw;
+      background: rgba(0, 107, 139, 0.596);
+      backdrop-filter: blur(10px);
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.6);
+      transition: 0.4s ease;
+      z-index: 3000;
+      padding: 20px;
+      padding-top: 50vh;
+      color: white;
+    }
+
+    .sidebar.open {
+      right: 0;
+    }
+
+    .noidung3 {
+      min-height: 100vh;
+      background-image: url("background4.jpg");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 0;
+    }
+
+    .thiep {
+      background: rgba(255, 118, 20, 0.9);
+      width: 1000px;
+      max-width: 90%;
+      border-radius: 50px;
+      padding: 30px;
+      text-align: center;
+      color: white;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+
+    .thiep.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .thiep-title {
+      font-size: 42px;
+      margin-bottom: 25px;
+    }
+
+    .thiep-content {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .thiep-image {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      object-fit: cover;
+    }
+
+    .thiep-message {
+      max-width: 600px;
+      font-size: 22px;
+      text-align: left;
+    }
+
+
+    @media (max-width: 900px) {
+      .text-gradient {
+        font-size: 13vw;
+        margin-bottom: 200px;
+        font-family: 'Montserrat';
+      }
+
+      .bubble {
+        border-width: 2px;
+      }
+
+      .modal-avatar {
+        width: 110px;
+        height: 110px;
+      }
+
+      .modal-description {
+        font-size: 16px;
+        font-family: 'Montserrat';
+      }
+
+      .thiep-title {
+        font-size: 32px;
+      }
+
+      .thiep-message {
+        font-size: 18px;
+        text-align: center;
+      }
+
+      .left-block {
+        left: -200vw;
+        width: 100vw;
+        background-image: url("dtnentrai.png");
+        clip-path: polygon(0 0, 100% 0, 75% 50%, 100% 100%, 0 100%);
+        z-index: 3;
+      }
+
+      .right-block {
+        right: -200vw;
+        width: 100vw;
+        background-image: url("dtnenphai.png");
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 25% 50%);
+        z-index: 2;
+      }
+
+      .bubble-container {
+        background-image: url(dtnen2.png);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .noidung3 {
+        background-image: url(dtnen3.png);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 0;
+        right: -350px;
+        width: 300px;
+        height: 100vw;
+        background: rgba(0, 107, 139, 0.596);
+        backdrop-filter: blur(10px);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.6);
+        transition: 0.4s ease;
+        z-index: 3000;
+        padding: 20px;
+        padding-top: 130px;
+        color: white;
+      }
+
+      .outlinetrong {
+        font-size: 30px;
+      }
+
+      .imgthiep {
+        display: none;
+      }
+
+    }
+
+    @media (max-width: 728px) {
+      .text-gradient {
+        font-size: 13vw;
+        margin-bottom: 200px;
+        font-family: 'Montserrat';
+      }
+
+      .khoi1 img {
+        width: 70vw;
+      }
+
+      .bubble {
+        width: 110px !important;
+        height: 110px !important;
+      }
+
+      .modal-content {
+        width: 95%;
+      }
+
+      .left-block {
+        left: -200vw;
+        width: 100vw;
+        background-image: url("dtnentrai.png");
+        clip-path: polygon(0 0, 100% 0, 75% 50%, 100% 100%, 0 100%);
+        z-index: 3;
+      }
+
+      .right-block {
+        right: -200vw;
+        width: 100vw;
+        background-image: url("dtnenphai.png");
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 25% 50%);
+        z-index: 2;
+      }
+
+      .bubble-container {
+        background-image: url(dtnen2.png);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .noidung3 {
+        background-image: url(dtnen3.png);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 0;
+        right: -350px;
+        width: 300px;
+        height: 100vw;
+        background: rgba(0, 107, 139, 0.596);
+        backdrop-filter: blur(10px);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.6);
+        transition: 0.4s ease;
+        z-index: 3000;
+        padding: 20px;
+        padding-top: 130px;
+        color: white;
+      }
+
+      .outlinetrong {
+        font-size: 30px;
+      }
+
+      .imgthiep {
+        display: none;
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    html,
+    body {
+      overflow-x: hidden !important;
+      max-width: 100vw;
+    }
+
+    .left-block,
+    .right-block {
+      max-width: 100vw !important;
+      overflow: hidden;
+    }
+
+    .cta {
+      display: flex;
+      padding: 11px 33px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #005371;
+      background: white;
+      transition: 1s;
+      box-shadow: 6px 6px 0 black;
+      transform: skewX(-15deg);
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta:focus {
+      outline: none;
+    }
+
+    .cta:hover {
+      transition: 0.5s;
+      box-shadow: 10px 10px 0 #005371;
+    }
+
+    .cta .second {
+      transition: 0.5s;
+      margin-right: 0px;
+    }
+
+    .cta:hover .second {
+      transition: 0.5s;
+      margin-right: 45px;
+    }
+
+    @font-face {
+      font-family: 'Montserrat';
+      src: url('./font/Montserrat-Bold.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    .span {
+      transform: skewX(15deg);
+      font-size: 20px;
+      font-family: 'Montserrat';
+    }
+
+    .second {
+      width: 20px;
+      margin-left: 30px;
+      position: relative;
+      top: 12%;
+    }
+
+    .one {
+      transition: 0.4s;
+      transform: translateX(-60%);
+    }
+
+    .two {
+      transition: 0.5s;
+      transform: translateX(-30%);
+    }
+
+    .cta:hover .three {
+      animation: color_anim 1s infinite 0.2s;
+    }
+
+    .modalName {
+      font-family: 'Montserrat';
+    }
+
+    .cta:hover .one {
+      transform: translateX(0%);
+      animation: color_anim 1s infinite 0.6s;
+    }
+
+    .cta:hover .two {
+      transform: translateX(0%);
+      animation: color_anim 1s infinite 0.4s;
+    }
+
+    @keyframes color_anim {
+      0% {
+        fill: white;
+      }
+
+      50% {
+        fill: #fbc638;
+      }
+
+      100% {
+        fill: white;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="taskbar">
+    <img class="logotaskbar" src="logo.png" onclick="window.location.href='index.html'" />
+    <img class="more" src="danhmuc.png" />
+  </div>
+
+  <div id="sidebarMenu" class="sidebar">
+    <button class="cta" onclick="window.location.href='index.html'">
+      <span class="span">Trang Chủ</span>
+      <span class="second">
+        <svg width="50px" height="20px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <path class="one"
+              d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z"
+              fill="#FFFFFF"></path>
+            <path class="two"
+              d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z"
+              fill="#FFFFFF"></path>
+            <path class="three"
+              d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z"
+              fill="#FFFFFF"></path>
+          </g>
+        </svg>
+      </span>
+    </button>
+
+  </div>
+
+  <div class="container">
+    <div class="baoquanh">
+      <div class="khoi1"><img src="logo.png" /></div>
+    </div>
+
+    <div class="left-block"></div>
+    <div class="right-block"></div>
+
+    <div class="text-gradient" id="monhoc"></div>
+  </div>
+
+  <div class="noidung" id="noidung">
+    <div class="bubble-container" id="bubbleContainer"></div>
+
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeModal()" style="
+              position: absolute;
+              top: 10px;
+              right: 15px;
+              font-size: 32px;
+              background: none;
+              border: none;
+              cursor: pointer;
+            ">
+          ×
+        </button>
+        <div class="modal-header">
+          <img id="modalAvatar" class="modal-avatar" />
+        </div>
+        <div class="modal-body">
+          <h2 id="modalName" class="modal-name"></h2>
+          <div id="modalPosition" class="modal-position"></div>
+          <p id="modalDescription" class="modal-description"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="noidung3">
+    <div class="card">
+      <div class="inside">
+        <p> Vietnamese Teachers' Day </p>
+      </div>
+      <div class="outside">
+        <div class="front">
+          <div class="outlinetrong">
+            <p>Chúc mừng
+              ngày nhà giáo
+              Việt Nam <br>
+              <i class="textthiep">Bấm vào đây</i>
+            </p>
+            <img class="imgthiep" src="logo.png" alt="">
+          </div>
+
+        </div>
+        <div class="back">
+          <p>Chúc thầy cô
+            có một ngày 20/11 vui vẻ
+            và tràn đầy niềm vui</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script>
+
+    const data = {
+      toan: {
+        ten: "Tổ Toán",
+        thanhvien: [
+          {
+            size: 170,
+            image:
+              "./picofteacher/Đỗ Phương Anh Tổ Toán.png",
+            name: "Đỗ Phương Anh  ",
+            position: "Tổ Toán",
+            description: "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Nguyễn Thị Bích Hồng- Tổ Toán.png",
+            name: "Nguyễn Thị Bích Hồng",
+            position: "Tổ Toán",
+            description: "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 8,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Nguyễn Thị Phương Thảo Toán.png",
+            name: "Nguyễn Thị Phương Thảo",
+            position: "Tổ Toán",
+            description: "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 7,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Nguyễn Thu Trang Toán.png",
+            name: "Nguyễn Thu Trang",
+            position: "Tổ Toán",
+            description: "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 8,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Phạm Thu Trang Tổ TOÁN.png",
+            name: "Phạm Thu Trang",
+            position: "Tổ Toán",
+            description: "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 8,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Trịnh Thu Vân Toán.png",
+            name: "Trịnh Thu Vân",
+            position: "Tổ Toán",
+            description: "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 8,
+          },
+          {
+            size: 170,
+            image:
+              "./cuttedavatar/Nguyễn Thị Hồng cropped Toán.png",
+            name: "Nguyễn Thị Hồng",
+            position: "Tổ Toán",
+            description: "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 8,
+          },
+        ],
+      },
+      van: {
+        ten: "Tổ Văn",
+        thanhvien: [
+          {
+            size: 170,
+            image:
+              "./picofteacher/Lê Minh Thư Tổ Ngữ Văn.png",
+            name: "Lê Minh Thư",
+            position: "Tổ Văn",
+            description: "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Bùi Bích Thủy Tổ NV.png",
+            name: "Bùi Bích Thủy",
+            position: "Tổ Văn",
+            description: "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 8,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Lê Thị Trang Tổ NV.png",
+            name: "Lê Thị Trang",
+            position: "Tổ Văn",
+            description: "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 7,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Nguyễn Ngọc Vân NV.png",
+            name: "Nguyễn Ngọc Vân",
+            position: "Tổ Văn",
+            description: "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 7,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Phạm Quang Nam Tổ NV.png",
+            name: "Phạm Quang Nam ",
+            position: "Tổ Văn",
+            description: "Kính chúc thầy một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc thầy mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 7,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Nguyễn Ngọc Thùy Linh NV.png",
+            name: "Nguyễn Ngọc Thùy Linh",
+            position: "Tổ Văn",
+            description: "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 7,
+          },
+        ],
+      },
+      tienganh: {
+        ten: "Tổ Tiếng Anh",
+        thanhvien: [
+          {
+            size: 170,
+            image:
+              "./picofteacher/Trần Thị Lụa Tổ TA.png",
+            name: "Trần Thị Lụa",
+            position: "Tổ Tiếng Anh",
+            description:
+              "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Nguyễn Minh Phương TA.png",
+            name: "Nguyễn Minh Phương",
+            position: "Tổ Tiếng Anh",
+            description: "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 8,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Hoàng Thị Linh Hương Tổ Tiếng Anh.png",
+            name: "Hoàng Thị Linh Hương",
+            position: "Tổ Tiếng Anh",
+            description: "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 7,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Phạm Thị Quyên Tổ TANH.png",
+            name: "Phạm Thị Quyên",
+            position: "Tổ Tiếng Anh",
+            description: "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 8,
+          },
+          {
+            size: 170,
+            image:
+              "./cuttedavatar/Nguyễn Thị Thu Trà TA cropped.png",
+            name: "Nguyễn Thị Thu Trà",
+            position: "Tổ Tiếng Anh",
+            description: "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò..",
+            duration: 8,
+          },
+          {
+            size: 170,
+            image:
+              "./cuttedavatar/cropped_Đỗ Thị Trà Mi Tổ Tiếng Anh.png",
+            name: "Đỗ Thị Trà Mi",
+            position: "Tổ Tiếng Anh",
+            description: "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò..",
+            duration: 8,
+          },
+        ],
+      },
+
+      khoahoctunhien: {
+        ten: "Tổ Khoa Học Tự Nhiên",
+        thanhvien: [
+          {
+            size: 170,
+            image:
+              "./picofteacher/Nguyễn Thị Cẩm Vân KHTN.png",
+            name: "Nguyễn Thị Cẩm Vân",
+            position: "Tổ Khoa Học Tự Nhiên",
+            description:
+              "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Nguyễn THị Phương Thúy KHTN.png",
+            name: "Nguyễn THị Phương Thúy",
+            position: "Tổ Khoa Học Tự Nhiên",
+            description:
+              "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Phạm Thị Hằng KHTN.png",
+            name: "Phạm Thị Hằng",
+            position: "Tổ Khoa Học Tự Nhiên",
+            description:
+              "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Trần Thu Hòa KHTN.png",
+            name: "Trần Thu Hòa ",
+            position: "Tổ Khoa Học Tự Nhiên",
+            description:
+              "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+        ],
+      },
+
+      khoahocxahoi: {
+        ten: "Tổ Khoa Học Xã Hội",
+        thanhvien: [
+          {
+            size: 170,
+            image:
+              "./picofteacher/Lê Thị Tuyết Mai KHXH.png",
+            name: "Lê Thị Tuyết Mai",
+            position: "Tổ Khoa Học Xã Hội",
+            description:
+              "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Lương Thùy Dương KHXH.png",
+            name: "Lương Thùy Dương",
+            position: "Tổ Khoa Học Xã Hội",
+            description:
+              "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Nguyễn Quỳnh Hương KHXH.png",
+            name: "Nguyễn Quỳnh Hương",
+            position: "Tổ Khoa Học Xã Hội",
+            description:
+              "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Nguyễn Thị Như KHXH.png",
+            name: "Nguyễn Thị Như",
+            position: "Tổ Khoa Học Xã Hội",
+            description:
+              "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+
+
+        ],
+      },
+
+      tintheducquocphong: {
+        ten: "Tổ Tin-Thể dục-Quốc phòng",
+        thanhvien: [
+          {
+            size: 170,
+            image:
+              "./picofteacher/Đào Thị Tuyết Tổ CNTT.png",
+            name: "Đào Thị Tuyết",
+            position: "Tổ CNTT",
+            description:
+              "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Hoàng Long CNTT.png",
+            name: "Nguyễn Hoàng Long",
+            position: "Tổ CNTT",
+            description:
+              "Kính chúc thầy một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc thầy mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò..",
+            duration: 9,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Nguyễn Thị Hoa Thể Dục.png",
+            name: "Nguyễn Thị Hoa",
+            position: "Tổ Thể Dục",
+            description:
+              "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Tạ Như Quỳnh Tổ TD.png",
+            name: "Tạ Như Quỳnh ",
+            position: "Tổ Thể Dục",
+            description:
+              "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+          {
+            size: 170,
+            image:
+              "./cuttedavatar/cropped-Bui Kim Hong.png",
+            name: "Bùi Kim Hồng",
+            position: "Tổ Quốc Phòng",
+            description:
+              "Kính chúc thầy một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc thầy mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+
+        ],
+      },
+      phonggiamthi: {
+        ten: "Phòng Giám Thị",
+        thanhvien: [
+          {
+            size: 170,
+            image:
+              "./picofteacher/Nguyễn Thị Hồng Hạnh - Phòng Giam Thi.png",
+            name: "Nguyễn Thị Hồng Hạnh",
+            position: "Phòng Giám Thị",
+            description:
+              "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Vũ Thị Hồng Vân PGT.png",
+            name: "Vũ Thị Hồng Vân",
+            position: "Phòng Giám Thị",
+            description:
+              "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+          {
+            size: 170,
+            image:
+              "./cuttedavatar/Nguyễn Phan Thắng cropped GIAMTHI.png",
+            name: "Nguyễn Phan Thắng",
+            position: "Phòng Giám Thị",
+            description:
+              "Kính chúc thầy một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc thầy mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+
+        ],
+      },
+
+      vanphong: {
+        ten: "Khối Văn Phòng",
+        thanhvien: [
+          {
+            size: 170,
+            image:
+              "./picofteacher/Trần Thị Thu Hương Đào Tạo.png",
+            name: "Trần Thị Thu Hương",
+            position: "Phòng Đào tạo",
+            description:
+              "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Kim Anh Thư Viện.png",
+            name: "Kim Anh",
+            position: "Phòng Thư Viện",
+            description:
+              "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+          {
+            size: 170,
+            image:
+              "./picofteacher/Đào Hoàng My Kế Toán.png",
+            name: "Đào Hoàng My",
+            position: "Phòng Kế Toán",
+            description:
+              "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+
+
+        ],
+      },
+
+      banlanhdao: {
+        ten: "Ban Lãnh Đạo",
+        thanhvien: [
+          {
+            size: 170,
+            image:
+              "./cuttedavatar/Ban lãnh đạo Nguyễn Thị Thanh Thúy.png",
+            name: "Nguyễn Thị Thanh Thúy",
+            position: "Ban Lãnh Đạo",
+            description:
+              "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+          {
+            size: 170,
+            image:
+              "./cuttedavatar/Trần Thu Hiên Ban Lãnh Đạo.png",
+            name: "Trần Thu Hiên",
+            position: "Ban Lãnh Đạo",
+            description:
+              "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+          {
+            size: 170,
+            image:
+              "./cuttedavatar/cropped-Lê Thị Thu Thủy Giam Doc.png",
+            name: "Lê Thị Thu Thủy",
+            position: "Ban Lãnh Đạo",
+            description:
+              "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+
+          {
+            size: 170,
+            image:
+              "./cuttedavatar/Nguyễn THị Thu Trang Ban Lãnh Đạo cropped.png",
+            name: "Nguyễn Thị Thu Trang",
+            position: "Ban Lãnh Đạo",
+            description:
+              "Kính chúc  cô một ngày 20/11 thật rực rỡ, luôn mạnh khỏe và ngập tràn niềm vui. Chúc cô mãi giữ được tình yêu nghề, nhiệt huyết và tiếp tục truyền cảm hứng cho bao thế hệ học trò.",
+            duration: 9,
+          },
+
+
+        ],
+      },
+
+
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const mon = params.get("monhoc") || "tienganh";
+    console.log("Subject selected:", mon);
+
+    if (!data[mon]) {
+      console.error("Subject not found:", mon);
+      alert("Môn học không tồn tại! Vui lòng chọn: toan, van, hoặc tienganh");
+    }
+
+    const monData = data[mon];
+    const thanhvien = monData.thanhvien;
+
+    const monhocTitle = document.getElementById("monhoc");
+    if (monhocTitle && monData) {
+      monhocTitle.innerHTML = monData.ten;
+    }
+    const baoquanh = document.querySelector(".baoquanh");
+    const leftBlock = document.querySelector(".left-block");
+    const rightBlock = document.querySelector(".right-block");
+
+    baoquanh.addEventListener("animationend", () => {
+      leftBlock.classList.add("run");
+      rightBlock.classList.add("run");
+
+      setTimeout(() => {
+        document.body.style.overflow = "visible";
+        const target = document.getElementById("noidung").offsetTop;
+
+        window.scrollTo({
+          top: target,
+          behavior: "smooth",
+        });
+
+        setTimeout(() => {
+          baoquanh.style.display = "none";
+        }, 300);
+      }, 2400);
+    });
+
+    const bubbleContainer = document.getElementById("bubbleContainer");
+    const placedBubbles = [];
+
+    function getRandomPosition(size) {
+      let x, y;
+      const cw = bubbleContainer.clientWidth;
+      const ch = bubbleContainer.clientHeight;
+
+      const radius = size / 2;
+
+      let attempts = 0;
+      const maxAttempts = 300;
+
+      while (attempts < maxAttempts) {
+        x = Math.random() * (cw - size);
+        y = Math.random() * (ch - size);
+
+        let overlap = false;
+
+        for (let b of placedBubbles) {
+          const dx = (b.x + b.size / 2) - (x + radius);
+          const dy = (b.y + b.size / 2) - (y + radius);
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < (b.size / 2 + radius)) {
+            overlap = true;
+            break;
+          }
+        }
+
+        if (!overlap) {
+          placedBubbles.push({ x, y, size });
+          return { x, y };
+        }
+
+        attempts++;
+      }
+
+
+      placedBubbles.push({ x: 0, y: 0, size });
+      return { x: 0, y: 0 };
+    }
+
+
+    thanhvien.forEach((p) => {
+      const bubble = document.createElement("div");
+      const pos = getRandomPosition(p.size);
+
+      bubble.className = "bubble";
+      bubble.style.width = p.size + "px";
+      bubble.style.height = p.size + "px";
+      bubble.style.left = pos.x + "px";
+      bubble.style.top = pos.y + "px";
+      bubble.style.animation = `float1 ${p.duration}s infinite`;
+
+      const img = document.createElement("img");
+      img.src = p.image;
+      img.alt = p.name;
+      bubble.appendChild(img);
+
+      bubble.onclick = () => {
+        document.getElementById("modalAvatar").src = p.image;
+        document.getElementById("modalName").textContent = p.name;
+        document.getElementById("modalPosition").textContent = p.position;
+        document.getElementById("modalDescription").textContent =
+          p.description;
+        document.getElementById("modal").classList.add("active");
+      };
+
+      bubbleContainer.appendChild(bubble);
+    });
+
+
+    function closeModal() {
+      document.getElementById("modal").classList.remove("active");
+    }
+
+    document.getElementById("modal").onclick = (e) => {
+      if (e.target === e.currentTarget) closeModal();
+    };
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
+
+    const sidebar = document.getElementById("sidebarMenu");
+    const moreBtn = document.querySelector(".more");
+
+    moreBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!sidebar.contains(e.target) && !moreBtn.contains(e.target)) {
+        sidebar.classList.remove("open");
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") sidebar.classList.remove("open");
+    });
+
+
+  </script>
+</body>
+
+</html>
